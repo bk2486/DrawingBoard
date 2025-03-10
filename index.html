@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing Board</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Drawing Board</h1>
+        </header>
+        
+        <div class="canvas-container">
+            <canvas id="drawingCanvas"></canvas>
+        </div>
+        
+        <div class="toolbar">
+            <div class="tool-section">
+                <h3>Tools</h3>
+                <div class="tool-buttons">
+                    <button id="brushTool" class="tool-btn active" title="Brush">
+                        <i class="fas fa-paint-brush"></i>
+                    </button>
+                    <button id="eraserTool" class="tool-btn" title="Eraser">
+                        <i class="fas fa-eraser"></i>
+                    </button>
+                    <button id="textTool" class="tool-btn" title="Add Text">
+                        <i class="fas fa-font"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="tool-section">
+                <h3>Shapes</h3>
+                <div class="tool-buttons">
+                    <button id="lineTool" class="tool-btn" title="Line">
+                        <i class="fas fa-slash"></i>
+                    </button>
+                    <button id="rectangleTool" class="tool-btn" title="Rectangle">
+                        <i class="far fa-square"></i>
+                    </button>
+                    <button id="circleTool" class="tool-btn" title="Circle">
+                        <i class="far fa-circle"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="tool-section">
+                <h3>Brush Options</h3>
+                <div class="control-group">
+                    <label for="brushColor">Color:</label>
+                    <input type="color" id="brushColor" value="#4a4a4a">
+                </div>
+                
+                <div class="control-group">
+                    <label for="brushSize">Size:</label>
+                    <div class="slider-container">
+                        <input type="range" id="brushSize" min="1" max="50" value="5">
+                        <span id="sizeValue">5px</span>
+                    </div>
+                </div>
+                
+                <div class="control-group">
+                    <label for="rainbowMode">Rainbow:</label>
+                    <label class="switch">
+                        <input type="checkbox" id="rainbowMode">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="tool-section">
+                <h3>Text</h3>
+                <div class="control-group">
+                    <input type="text" id="textInput" placeholder="Enter text...">
+                    <button id="addTextBtn">Add Text</button>
+                </div>
+            </div>
+            
+            <div class="tool-section">
+                <h3>Actions</h3>
+                <div class="action-buttons">
+                    <button id="undoBtn" class="action-btn" title="Undo">
+                        <i class="fas fa-undo"></i> Undo
+                    </button>
+                    <button id="clearBtn" class="action-btn" title="Clear Canvas">
+                        <i class="fas fa-trash-alt"></i> Clear
+                    </button>
+                    <button id="saveBtn" class="action-btn" title="Save as PNG">
+                        <i class="fas fa-download"></i> Save
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
